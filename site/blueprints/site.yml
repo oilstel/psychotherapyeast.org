@@ -1,0 +1,55 @@
+title: My Custom Page
+
+fields:
+  intro:
+    label: Introduction
+    type: textarea
+    help: Enter the introduction text for the page.
+
+  headerImage:
+    label: Header Image
+    type: files
+    max: 1
+    help: Upload a header image for the page.
+
+  sections:
+    label: Page Sections
+    type: structure
+    fields:
+      sectionTitle:
+        label: Section Title
+        type: text
+      sectionBody:
+        label: Section Body
+        type: textarea
+
+  team:
+    label: Team Members
+    type: structure
+    fields:
+      name:
+        label: Name
+        type: text
+      about:
+        label: About
+        type: textarea
+      teamMemberImage:
+        label: Team Member Image
+        type: files
+        max: 1
+      isActive:
+        label: Active Member?
+        type: toggle
+        text: yes/no
+
+  contact:
+    label: Contact Information
+    type: headline
+  contactPhone:
+    label: Phone
+    type: tel
+    width: 1/2
+  contactEmail:
+    label: Email
+    type: email
+    width: 1/2

@@ -1,0 +1,232 @@
+*, *:before, *:after { box-sizing: border-box; }
+html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    /* font-family: Courier, 'Courier New', monospace; */
+    color: #541313;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; 
+    -webkit-text-size-adjust: none;
+    font-size: 18px;
+    background: #e2e1d9;
+    margin: 0px;
+    padding: 30px;
+    height: 100dvh;
+}
+header {
+    margin: 0;
+    max-width: 600px;
+}
+p {
+    line-height: 28px;
+}
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 40px;
+    height: calc(100dvh - 30px);
+}
+main #info div {
+    margin-bottom: 20px;
+}
+main aside {
+    position: absolute;
+    right: 40px;
+    width: 600px;
+}
+main aside div p {
+    margin-top: 0px;
+}
+main #info p, main #info h3 {
+    font-size: 14px;
+    line-height: 19px;
+}
+#content {
+    position: fixed;
+    display: flex;
+    flex-flow: column nowrap;
+    height: calc(100dvh - 30px);
+}
+#content #info {
+    margin-top: auto;
+}
+
+header h1 {
+    font-family: 'STIX Two Text';
+    font-size: 24px;
+    margin: 0;
+    margin-bottom: 8px;
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+.box {
+    border: 1px solid #541313;
+    padding: 20px;
+}
+.inner {
+    padding: 10px 10px 20px 10px;
+}
+#about {
+    margin-bottom: 30px;
+}
+details {
+    border: 1px solid #541313;
+    border: 0;
+    margin-bottom: 15px;
+    border: 1px solid #000;
+    border-radius: 3px;
+    background-color: #ffffff82;
+}
+details summary {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 10px;
+}
+details summary {
+    padding: 10px;
+}
+details summary img {
+    max-width: 30px;
+    opacity: .3;
+}
+details summary:hover {
+    background-color: #00000007;
+}
+details p:last-child {
+    margin-bottom: 0;
+}
+h3 {
+    font-size: 18px;
+    line-height: 28px;
+    margin-bottom: 0;
+}
+img {
+    max-width: 200px;
+}
+nav {
+    border: 1px solid #000;
+    padding: 20px;
+}
+nav {
+    display: flex;
+    justify-content: flex-start;
+}
+nav a {
+    display: flex;
+    width: 100%;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+nav a img {
+
+}
+nav a span {
+    color: purple;
+}
+
+
+nav {
+    display: flex;
+    gap: 15px;
+    padding: 0;
+    border: 0;
+    padding: 10px;
+}
+nav a {
+    display: block;
+    border: 1px solid #541313;
+    padding: 10px;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 2px;
+}
+nav a:hover {
+    background-color: #e2e1d9;
+}
+nav a::before {
+    display: block;
+    width: 20px;
+    height: 20px;
+    content: '';
+    background-repeat: none;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 2px;
+    /* filter: blur(4px); */
+    margin:  30px auto;
+}
+nav a:nth-child(1)::before {
+    background-image: url('../images/sun.png');
+    /* background-color: rgb(68, 13, 130); */
+}
+nav a:nth-child(2)::before {
+    background-image: url('../images/leaf.png');
+    /* background-color: rgb(189, 53, 4); */
+}
+nav a:nth-child(3)::before {
+    background-image: url('../images/ant.png');
+    /* background-color: rgb(171, 191, 42); */
+}
+nav a:nth-child(1):hover {
+    background-color: rgba(68, 13, 130, 0.178);
+}
+nav a:nth-child(2):hover {
+    background-color: rgba(189, 53, 4, 0.151);
+}
+nav a:nth-child(3):hover {
+    background-color: rgba(171, 191, 42, 0.392);
+}
+
+
+#glass-pane {
+    width: 200px;
+    height: 120px;
+    border: 1px solid #541313;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.droplet {
+    width: 10px;
+    height: 10px;
+    border: 1px solid #541313;
+    border-radius: 50%;
+    position: absolute;
+}
+
+
+@media(max-width: 1000px) {
+    header {
+
+    }
+    main {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+    }
+    main aside {
+        position: relative;
+        right: 0;
+        width: 100%;
+    }
+    #content {
+        position: relative;
+        height: auto;
+    }
+    #content header {
+        order: 1;
+    }
+    #content #info {
+        margin-top: 0;
+        order: 2;
+    }
+}
