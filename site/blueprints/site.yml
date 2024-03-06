@@ -39,7 +39,7 @@ fields:
         max: 1
       isActive:
         label: Active Member?
-        type: toggle
+        type: toggle 
         text: yes/no
 
   contact:
