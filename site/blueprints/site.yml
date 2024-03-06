@@ -46,7 +46,7 @@ fields:
     label: Contact Information
     type: headline
   contactPhone:
-    label: Phone
+    label: Phone 
     type: tel
     width: 1/2
   contactEmail:
