@@ -12,7 +12,7 @@ media
 !/media/index.html
 
 # Content files
-content
+/content
 /content/*
 
 
