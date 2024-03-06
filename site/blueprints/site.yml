@@ -21,7 +21,7 @@ fields:
         type: text
       sectionBody:
         label: Section Body
-        type: textarea
+        type: textarea 
 
   team:
     label: Team Members
