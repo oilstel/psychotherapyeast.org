@@ -189,6 +189,44 @@ nav a:nth-child(3):hover {
     background-color: rgba(171, 191, 42, 0.392);
 }
 
+/* Team List */
+#team ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    margin: 14px 0;
+}
+#team button, #team .name-without-page {
+    font-size: 14px;
+    line-height: 14px;
+    display: flex;
+    align-items: center; /* Adjusted for vertical centering */
+    gap: 2px; /* Optional: Adjusted for a small gap between text and icon */
+    color: #541313;
+    background-color: transparent;
+    outline: none;
+    padding: 0;
+    border: 0;
+    margin-bottom: 3px;
+}
+#team .name-without-page {
+    margin-bottom: 3px;
+}
+#team button {
+    cursor: pointer;
+}
+#team button span { /* New style for the span */
+    text-decoration: none;
+    display: inline; /* Ensures the span is inline */
+}
+#team button:hover span { /* Apply underline to span text only on hover */
+    text-decoration: underline;
+}
+#team button::after {
+    content: '↗';
+    font-size: 9px;
+}
+
 
 #glass-pane {
     width: 200px;
@@ -225,12 +263,19 @@ nav a:nth-child(3):hover {
     margin: 30px;
     padding: 10px;
     border-radius: 3px;
-    width: 600px;
+    width: calc(100% - 60px);
+    max-width: 600px;
     max-height: calc(100dvh - 61px);
 }
 #members #inner .content {
     overflow-y: scroll;
     max-height: calc(100dvh - 142px);
+}
+#members #inner .member h3 {
+    margin-bottom: 18px;
+}
+#members #inner .member p:last-child {
+    margin-bottom: 0;
 }
 
 

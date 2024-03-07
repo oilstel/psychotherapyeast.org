@@ -70,10 +70,10 @@ tabs:
                 type: files
                 max: 1
                 template: image
-              isActive:
-                label: Active Member?
+              pageActive:
+                label: Page active?
                 type: toggle
-                text: yes/no
+                text: 
                 
       contactSection:
         type: fields

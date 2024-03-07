@@ -20,12 +20,15 @@
 
             <div id="team">
                 <h3>Clinical team</h3>
-
-                <p>
+                <ul>
                     <?php foreach ($site->team()->toStructure() as $member): ?>
-                        <button data-member="<?= $member->name()->slug() ?>"><?= $member->name()->html() ?></button><br>
+                        <?php if ($member->pageActive()->bool()): ?>
+                            <li><button data-member="<?= $member->name()->slug() ?>"><span><?= $member->name()->html() ?></span></button></li>
+                        <?php else: ?>
+                            <li class="name-without-page"><?= $member->name()->html() ?></li>
+                        <?php endif; ?>
                     <?php endforeach ?>
-                </p>
+                </ul>
             </div>
         </div>
     </div>
@@ -50,20 +53,15 @@
     <div id="inner">
         <?php foreach ($site->team()->toStructure() as $member): ?>
             <div class="member" id="<?= $member->name()->slug() ?>">
-                <button class="close" data-member="<?= $member->name()->slug() ?>">close bio</button>
-                <h3><?= $member->name()->html() ?></h3>
+                <button class="close" data-member="<?= $member->name()->slug() ?>">close <?= $member->name()->lower() ?> bio</button>
                 <div class="content">
+                    <h3><?= $member->name()->html() ?></h3>
                     <?php if ($image = $member->teamMemberImage()->toFile()): ?>
                         <img src="<?= $image->url() ?>" alt="Team Member Image">
                     <?php endif ?>
                     <div class="bio">
                         <?= $member->about()->kt() ?>
                     </div>
-                    <?php if ($member->isActive()->bool()): ?>
-                        <div class="status">Active Member</div>
-                    <?php else: ?>
-                        <div class="status">Inactive Member</div>
-                    <?php endif ?>
                 </div>
             </div> 
         <?php endforeach ?>
@@ -72,33 +70,61 @@
 
 
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        var memberButtons = document.querySelectorAll('#team button[data-member]');
-        var closeButton = document.querySelectorAll('.member .close');
-        var membersDiv = document.getElementById('members');
+document.addEventListener("DOMContentLoaded", function() {
+    var membersDiv = document.getElementById('members');
+    var memberDivs = document.querySelectorAll('.member');
 
-        memberButtons.forEach(function(button) {
-            button.addEventListener('click', function() {
-                var memberId = button.getAttribute('data-member');
-                document.querySelectorAll('.member').forEach(function(member) {
-                    if (member.id === memberId) {
-                        membersDiv.style.display = 'block';
-                        member.style.display = 'block';
-                    } else {
-                        member.style.display = 'none';
-                    }
-                });
-            });
+    // Function to hide all members and the container
+    function hideMembers() {
+        membersDiv.style.display = 'none';
+        memberDivs.forEach(function(member) {
+            member.style.display = 'none';
         });
+        document.body.style.overflow = ''; // Re-enable scrolling on the body
+    }
 
-        closeButton.forEach(function(button) {
-            button.addEventListener('click', function() {
-                var memberId = button.getAttribute('data-member');
-                document.getElementById(memberId).style.display = 'none';
-                membersDiv.style.display = 'none'; // Optionally hide the entire container
+    // Event listener for #members to close on direct clicks
+    membersDiv.addEventListener('click', function(event) {
+        // Check if the click is directly on #members (not on its children)
+        if (event.target === membersDiv) {
+            hideMembers();
+        }
+    });
+
+    // Handle opening of member details
+    document.querySelectorAll('#team button[data-member]').forEach(function(button) {
+        button.addEventListener('click', function() {
+            var memberId = button.getAttribute('data-member');
+            memberDivs.forEach(function(member) {
+                if (member.id === memberId) {
+                    membersDiv.style.display = 'block';
+                    member.style.display = 'block';
+                    document.body.style.overflow = 'hidden'; // Disable scrolling on the body
+                } else {
+                    member.style.display = 'none';
+                }
             });
         });
     });
+
+    // Optional: Close button inside member div
+    document.querySelectorAll('.member .close').forEach(function(button) {
+        button.addEventListener('click', function() {
+            hideMembers();
+        });
+    });
+
+    // Close #members when Escape key is pressed
+    document.addEventListener('keydown', function(event) {
+        if (event.key === "Escape") {
+            hideMembers();
+        }
+    });
+});
+
+
+
+
 </script>
 
 
