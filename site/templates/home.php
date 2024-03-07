@@ -65,7 +65,7 @@
                         <div class="status">Inactive Member</div>
                     <?php endif ?>
                 </div>
-            </div>
+            </div> 
         <?php endforeach ?>
     </div>
 </div>
