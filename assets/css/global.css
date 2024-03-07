@@ -21,6 +21,9 @@ header {
 p {
     line-height: 28px;
 }
+a {
+    color: #541313;
+}
 main {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -190,7 +193,7 @@ nav a:nth-child(3):hover {
 #glass-pane {
     width: 200px;
     height: 120px;
-    border: 1px solid #541313;
+    border: 1.5px solid #541313;
     position: relative;
     overflow: hidden;
     display: inline-block;
@@ -199,9 +202,35 @@ nav a:nth-child(3):hover {
 .droplet {
     width: 10px;
     height: 10px;
-    border: 1px solid #541313;
+    border: 1.5px solid #541313;
     border-radius: 50%;
     position: absolute;
+}
+
+
+/* Members */
+#members {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: calc(100dvh);
+    overflow-y: scroll;
+    background-color: #00000062;
+}
+#members #inner {
+    border: 1px solid #000;
+    background-color: #e2e1d9;
+    margin: 30px;
+    padding: 10px;
+    border-radius: 3px;
+    width: 600px;
+    max-height: calc(100dvh - 61px);
+}
+#members #inner .content {
+    overflow-y: scroll;
+    max-height: calc(100dvh - 142px);
 }
 
 

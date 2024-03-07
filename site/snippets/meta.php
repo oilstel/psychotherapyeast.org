@@ -11,6 +11,34 @@
     ?>
     <title><?= $site->title() ?></title>
     <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
+    <style>
+        <?php
+            // Get the text color
+            $textColor = $site->textColor()->value();
+            // Default to black if not set
+            if (empty($textColor)) {
+                $textColor = '#541313';
+            }
+
+            // Get the background color
+            $backgroundColor = $site->backgroundColor()->value();
+            // Default to white if not set
+            if (empty($backgroundColor)) {
+                $backgroundColor = '#e2e1d9';
+            }
+        ?>
+
+        h1, h2, h3, p, summary, a {
+            color: <?= $textColor; ?>;
+        }
+        #glass-pane, #glass-pane .droplet {
+            border-color: <?= $textColor; ?>;
+        }
+        html, body, #members #inner {
+            background-color: <?= $backgroundColor; ?>;
+        }
+
+    </style>
 </head>
 
 <body id="<?= $page->parent() ? $page->parent()->slug() : $page->slug() ?>">

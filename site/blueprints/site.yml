@@ -1,55 +1,131 @@
-title: My Custom Page
+title: CMS
 
-fields:
-  intro:
-    label: Introduction
-    type: textarea
-    help: Enter the introduction text for the page.
+tabs:
+  content:
+    label: Content
+    sections:
+      introductionSection:
+        type: fields
+        fields:
+          introHeadline:
+            label: Page Introduction
+            type: headline
+            text: Introduction Section
+          intro:
+            label: Introduction
+            type: textarea
+            help: Enter the introduction text for the page.
+            
+      headerImageSection:
+        type: fields
+        fields:
+          imageHeadline:
+            label: Main Header Image
+            type: headline
+            text: Header Image Section
+          headerImage:
+            label: Header Image
+            type: files
+            max: 1
+            help: Upload a header image for the page.
+            template: image
+            
+      pageSections:
+        type: fields
+        fields:
+          sectionsHeadline:
+            label: Content Sections
+            type: headline
+            text: Page Sections
+          sections:
+            label: Page Sections
+            type: structure
+            fields:
+              sectionTitle:
+                label: Section Title
+                type: text
+              sectionBody:
+                label: Section Body
+                type: textarea
+                
+      teamSection:
+        type: fields
+        fields:
+          teamHeadline:
+            label: Clinical Team
+            type: headline
+            text: Team Members Section
+          team:
+            label: Team Members
+            type: structure
+            fields:
+              name:
+                label: Name
+                type: text
+              about:
+                label: About
+                type: textarea
+              teamMemberImage:
+                label: Team Member Image
+                type: files
+                max: 1
+                template: image
+              isActive:
+                label: Active Member?
+                type: toggle
+                text: yes/no
+                
+      contactSection:
+        type: fields
+        fields:
+          contactHeadline:
+            label: Contact Information
+            type: headline
+            text: Contact Information
+          contactPhone:
+            label: Phone
+            type: tel
+            width: 1/2
+          contactEmail:
+            label: Email
+            type: email
+            width: 1/2
 
-  headerImage:
-    label: Header Image
-    type: files
-    max: 1
-    help: Upload a header image for the page.
+      appearanceSection:
+        type: fields
+        fields:
+          appearanceHeadline:
+            label: Appearance Settings
+            type: headline
+            text: Appearance Customization
+          textColor:
+            label: Text Color
+            type: color
+            default: "#000000"
+            help: Choose a custom text color.
+            width: 1/4
+          backgroundColor:
+            label: Background Color
+            type: color
+            default: "#ffffff"
+            help: Choose a custom background color.
+            width: 1/4
 
-  sections:
-    label: Page Sections
-    type: structure
-    fields:
-      sectionTitle:
-        label: Section Title
-        type: text
-      sectionBody:
-        label: Section Body
-        type: textarea
-
-  team:
-    label: Team Members
-    type: structure
-    fields:
-      name:
-        label: Name
-        type: text
-      about:
-        label: About
-        type: textarea
-      teamMemberImage:
-        label: Team Member Image
+  filesTab:
+    label: Files
+    sections:
+      allFilesSection:
         type: files
-        max: 1
-      isActive:
-        label: Active Member? 
-        type: toggle 
-        text: yes/no
-
-  contact:
-    label: Contact Information
-    type: headline
-  contactPhone:
-    label: Phone 
-    type: tel
-    width: 1/2
-  contactEmail:
-    label: Email
-    type: email
-    width: 1/2
+        fields:
+          filesHeadline:
+            label: All Uploaded Files
+            type: headline
+            text: Files Section
+        headline: All Files
+        layout: cards
+        info: "{{ file.dimensions }}"
+        text: "{{ file.filename }}"
+        size: "tiny"
+        image:
+          back: "black"
+          cover: true
