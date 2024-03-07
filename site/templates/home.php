@@ -1,41 +1,40 @@
 <?php snippet('header') ?>
 
 <main>
-    <div id="content">
-        <header>
-            <div id="glass-pane" style="background-image: url('<?php if ($image = $site->headerImage()->toFile()) { echo $image->url(); } ?>'); background-size: cover;"></div>
-            <!-- <div id="glass-pane"></div> -->
-            <br><br>
-            <h1><?= $site->title()->html() ?></h1>
-        </header>
-        <div id="info">
-            <div id="contact">
-                <h3>Contact</h3>
+    <header>
+        <div id="glass-pane" style="background-image: url('<?php if ($image = $site->headerImage()->toFile()) { echo $image->url(); } ?>'); background-size: cover;"></div>
+        <br><br>
+        <h1><?= $site->title()->html() ?></h1>
+    </header>
 
-                <p>
-                    <span style="opacity: .4; margin-right: 4px;">T</span> <?= $site->contactPhone()->html() ?><br>
-                    <span style="opacity: .4; margin-right: 4px;">E</span> <?= $site->contactEmail()->html() ?>
-                </p>
-            </div>
+    <div id="contact">
+        <h3>Contact</h3>
 
-            <div id="team">
-                <h3>Clinical team</h3>
-                <ul>
-                    <?php foreach ($site->team()->toStructure() as $member): ?>
-                        <?php if ($member->pageActive()->bool()): ?>
-                            <li><button data-member="<?= $member->name()->slug() ?>"><span><?= $member->name()->html() ?></span></button></li>
-                        <?php else: ?>
-                            <li class="name-without-page"><?= $member->name()->html() ?></li>
-                        <?php endif; ?>
-                    <?php endforeach ?>
-                </ul>
-            </div>
-        </div>
+        <p>
+            <span style="opacity: .4; margin-right: 4px;">T</span> <?= $site->contactPhone()->html() ?><br>
+            <span style="opacity: .4; margin-right: 4px;">E</span> <?= $site->contactEmail()->html() ?>
+        </p>
+    </div>
+
+    <div id="team">
+        <h3>Clinical team</h3>
+        <ul>
+            <?php foreach ($site->team()->toStructure() as $member): ?>
+                <?php if ($member->pageActive()->bool()): ?>
+                    <li><button data-member="<?= $member->name()->slug() ?>"><span><?= $member->name()->html() ?></span></button></li>
+                <?php else: ?>
+                    <li class="name-without-page"><?= $member->name()->html() ?></li>
+                <?php endif; ?>
+            <?php endforeach ?>
+        </ul>
     </div>
 
     <aside>
         <div id="about">
             <?= $site->intro()->kt() ?>
+        </div>
+        <div id="quick-contact">
+            <p>Schedule a time to talk with our psychotherapists. Email us at <b>info@psychotherapyeast.org</b> or call <b>+358 45 1184542</b>.</p>
         </div>
         <?php foreach ($site->sections()->toStructure() as $section): ?>
             <details>
@@ -46,6 +45,10 @@
             </details>
         <?php endforeach ?>
     </aside>
+
+    <div id="banner">
+        This is an annoucement banner for everyone to see...
+    </div>
 </main>
 
 <!-- Team member bios -->
@@ -67,6 +70,7 @@
         <?php endforeach ?>
     </div>
 </div>
+
 
 
 <script>
