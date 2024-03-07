@@ -12,8 +12,8 @@
 - Allow for some clinical team members to be listed without having an individual page immediately available, catering to members who are yet to qualify.
 
 ## Contact Functionality
-- Implement an easy way for visitors to send a quick email, possibly through a form.
-- Place this contact form or link prominently on the front page and also on each subsection page under "What We Do".
+- ✅ Implement an easy way for visitors to send a quick email, possibly through a form.
+- ✅ Place this contact form or link prominently on the front page and also on each subsection page under "What We Do".
 
 ## Subsection Pages
 - Design and format subsection pages for additional text and information, with the flexibility for Jamie to edit the copy later.
