@@ -32,9 +32,9 @@ a {
 main {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: 1fr 1fr 1fr 1fr 83px 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-gap: 10px;
-    height: calc(100dvh - 30px);
+    height: 100dvh;
     padding: 30px;
     position: relative;
 }
@@ -75,6 +75,12 @@ main #contact p, main #contact h3, main #team p, main #team h3 {
     background-color: rgba(179, 184, 241, 0.817);
     padding: 10px;
     border-top: 1px solid #541313;
+}
+#banner p {
+    margin: 0;
+}
+.banner-active {
+    height: calc(100dvh - 40px);
 }
 #content #info {
     margin-top: auto;
@@ -337,6 +343,10 @@ nav a:nth-child(3):hover {
     }
     #contact {
         grid-row: 2 !important;
+    }
+    #team {
+        grid-row: initial !important;
+        padding-bottom: 84px;
     }
     main aside {
         position: relative;

@@ -94,6 +94,21 @@ tabs:
       appearanceSection:
         type: fields
         fields:
+
+          # Add the announcement banner fields here
+          announcementBannerHeadline:
+            label: Announcement Banner
+            type: headline
+            text: Announcement Banner Settings
+          announcementBanner:
+            label: Announcement Banner Text
+            type: textarea
+            help: Enter the text for the announcement banner.
+          showBanner:
+            label: Display Announcement Banner?
+            type: toggle
+            help: Toggle on to display the announcement banner on the website.
+
           appearanceHeadline:
             label: Appearance Settings
             type: headline

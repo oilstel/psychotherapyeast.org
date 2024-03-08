@@ -1,6 +1,6 @@
 <?php snippet('header') ?>
 
-<main>
+<main <?= $site->showBanner()->bool() ? 'class="banner-active"' : ''; ?>>
     <header>
         <div id="glass-pane" style="background-image: url('<?php if ($image = $site->headerImage()->toFile()) { echo $image->url(); } ?>'); background-size: cover;"></div>
         <br><br>
@@ -46,9 +46,12 @@
         <?php endforeach ?>
     </aside>
 
-    <div id="banner">
-        This is an annoucement banner for everyone to see...
-    </div>
+    <?php if($site->showBanner()->bool()): ?>
+        <div id="banner">
+            <?= $site->announcementBanner()->kirbytext() ?>
+        </div>
+    <?php endif; ?>
+
 </main>
 
 <!-- Team member bios -->
@@ -124,7 +127,20 @@ document.addEventListener("DOMContentLoaded", function() {
             hideMembers();
         }
     });
+
+
+    // Get the actual heights of #contact and #team
+    const contactHeight = document.querySelector('#contact').offsetHeight;
+    const teamHeight = document.querySelector('#team').offsetHeight;
+    
+    // Construct the grid-template-rows value
+    const gridTemplateRowsValue = `1fr 1fr 1fr 1fr ${contactHeight}px ${teamHeight}px`;
+    
+    // Set the grid-template-rows style of <main>
+    document.querySelector('main').style.gridTemplateRows = gridTemplateRowsValue;
 });
+
+
 
 
 
