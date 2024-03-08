@@ -28,8 +28,8 @@
             }
         ?>
 
-        h1, h2, h3, p, summary, a {
-            color: <?= $textColor; ?>;
+        h1, h2, h3, p, button, #team a, li, summary, a {
+            color: <?= $textColor; ?> !important;
         }
         #glass-pane, #glass-pane .droplet {
             border-color: <?= $textColor; ?>;
