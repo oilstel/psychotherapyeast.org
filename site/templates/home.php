@@ -33,9 +33,11 @@
         <div id="about">
             <?= $site->intro()->kt() ?>
         </div>
-        <div id="quick-contact">
-            <p>Schedule a time to talk with our psychotherapists. Email us at <b>info@psychotherapyeast.org</b> or call <b>+358 45 1184542</b>.</p>
-        </div>
+        <?php if($site->quickInfo()->isNotEmpty()): ?>
+            <div id="quick-contact">
+                <?= $site->quickInfo()->kt() ?>
+            </div>
+        <?php endif; ?>
         <?php foreach ($site->sections()->toStructure() as $section): ?>
             <details>
                 <summary><?= $section->sectionTitle()->html() ?></summary>

@@ -23,6 +23,18 @@ tabs:
               - "|"
               - ul
               - ol
+          quickInfo:
+            label: Quick info
+            type: textarea
+            help: Leave this blank to hide it.
+            buttons:
+              - bold
+              - italic
+              - link
+              - email
+              - "|"
+              - ul
+              - ol
             
       headerImageSection:
         type: fields
