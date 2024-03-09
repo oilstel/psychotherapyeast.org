@@ -59,7 +59,9 @@
     <div id="inner">
         <?php foreach ($site->team()->toStructure() as $member): ?>
             <div class="member" id="<?= $member->name()->slug() ?>">
-                <button class="close" data-member="<?= $member->name()->slug() ?>">close <?= $member->name()->lower() ?> bio</button>
+                <div class="top">
+                    <button class="close" data-member="<?= $member->name()->slug() ?>">close <?= $member->name()->lower() ?>'s bio</button>
+                </div>
                 <div class="content">
                     <h3><?= $member->name()->html() ?></h3>
                     <?php if ($image = $member->teamMemberImage()->toFile()): ?>
