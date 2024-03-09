@@ -15,6 +15,14 @@ tabs:
             label: Introduction
             type: textarea
             help: Enter the introduction text for the page.
+            buttons:
+              - bold
+              - italic
+              - link
+              - email
+              - "|"
+              - ul
+              - ol
             
       headerImageSection:
         type: fields
@@ -47,6 +55,14 @@ tabs:
               sectionBody:
                 label: Section Body
                 type: textarea
+                buttons:
+                  - bold
+                  - italic
+                  - link
+                  - email
+                  - "|"
+                  - ul
+                  - ol
                 
       teamSection:
         type: fields
@@ -65,6 +81,14 @@ tabs:
               about:
                 label: About
                 type: textarea
+                buttons:
+                  - bold
+                  - italic
+                  - link
+                  - email
+                  - "|"
+                  - ul
+                  - ol
               teamMemberImage:
                 label: Team Member Image
                 type: files
@@ -109,6 +133,14 @@ tabs:
             label: Announcement Banner Text
             type: textarea
             help: Enter the text for the announcement banner.
+            buttons:
+              - bold
+              - italic
+              - link
+              - email
+              - "|"
+              - ul
+              - ol
           showBanner:
             label: Display Announcement Banner?
             type: toggle
