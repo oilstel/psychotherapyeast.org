@@ -70,6 +70,11 @@ tabs:
                 type: files
                 max: 1
                 template: image
+              professionalLogos:
+                label: Professional Logos
+                type: files
+                help: Upload professional logos associated with this team member.
+                template: image
               pageActive:
                 label: Page active?
                 type: toggle

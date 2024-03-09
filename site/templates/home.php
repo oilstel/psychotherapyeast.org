@@ -70,6 +70,19 @@
                     <div class="bio">
                         <?= $member->about()->kt() ?>
                     </div>
+                    <!-- Professional Logos -->
+                    <?php
+                    // Assuming 'professionalLogos' is a field that returns a collection of file objects
+                    $logos = $member->professionalLogos()->toFiles();
+                    if($logos->isNotEmpty()): ?>
+                        <div class="professional-logos">
+                            <?php foreach ($logos as $logo): ?>
+                                <figure>
+                                    <img src="<?= $logo->url() ?>" alt="<?= $member->name()->html() ?> Professional Logo">
+                                </figure>
+                            <?php endforeach; ?>
+                        </div>
+                    <?php endif; ?>
                 </div>
             </div> 
         <?php endforeach ?>
