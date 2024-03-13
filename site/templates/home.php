@@ -2,7 +2,7 @@
 
 <main <?= $site->showBanner()->bool() ? 'class="banner-active"' : ''; ?>>
     <header>
-        <div id="glass-pane" style="background-image: url('<?php if ($image = $site->headerImage()->toFile()) { echo $image->url(); } ?>'); background-size: cover;"></div>
+        <div id="glass-pane" style="background-image: url('<?php if ($image = $site->headerImage()->toFile()) { echo $image->resize(350)->url(); } ?>'); background-size: cover;"></div>
         <br><br>
         <h1><?= $site->title()->html() ?></h1>
     </header>
