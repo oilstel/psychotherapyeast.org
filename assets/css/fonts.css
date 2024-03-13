@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'STIXTwoText';
+    src: url('assets/fonts/STIXTwoText-VariableFont_wght.ttf') format('truetype');
+    font-weight: 900; /* Adjust according to the font's weight range */
+    font-style: normal;
+}
+
+/* @font-face {
+    font-family: 'STIXTwoText Italic';
+    src: url('assets/fonts/STIXTwoText-Italic-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: italic;
+} */
