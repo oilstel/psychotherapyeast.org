@@ -65,7 +65,7 @@
             </div>
         <?php endif; ?>
         <?php foreach ($site->sections()->toStructure() as $section): ?>
-            <details open>
+            <details>
                 <summary><?= $section->sectionTitle()->html() ?></summary>
                 <div class="inner">
                     <?= $section->sectionBody()->kirbytext() ?>
