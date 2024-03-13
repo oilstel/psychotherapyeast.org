@@ -19,9 +19,12 @@ header {
     grid-row: 1 / 1;
     margin: 0;
     max-width: 600px;
-}
-header, #contact, #team {
     position: fixed;
+}
+#corner-info {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
 }
 p {
     line-height: 28px;
@@ -86,6 +89,9 @@ main #contact p, main #contact h3, main #team p, main #team h3 {
 }
 .banner-active {
     height: calc(100dvh - 40px);
+}
+.banner-active #corner-info {
+    bottom: 70px;
 }
 #content #info {
     margin-top: auto;
@@ -378,6 +384,12 @@ nav a:nth-child(3):hover {
         grid-template-columns: 1fr !important;
         grid-template-rows: repeat(6, 1fr);
         max-width: 600px;
+    }
+    #contact, #team {
+        display: block !important;
+    }
+    #corner-info {
+        display: none;
     }
     header, #contact, #team, aside {
         grid-column: 1 / -1 !important;
