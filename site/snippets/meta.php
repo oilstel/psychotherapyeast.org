@@ -27,6 +27,10 @@
             if (empty($backgroundColor)) {
                 $backgroundColor = '#e2e1d9';
             }
+
+            if($windowImage = $site->headerImage()->toFiles()->first()) {
+                $windowImage = $windowImage->url();
+            }
         ?>
 
         h1, h2, h3, p, button, #team a, li, summary, a {
@@ -37,6 +41,13 @@
         }
         html, body, #members #inner {
             background-color: <?= $backgroundColor; ?>;
+        }
+        #room {
+            background-color: <?= $backgroundColor; ?>;
+        }
+        #window {
+            background-image: url('<?= $windowImage; ?>');
+            border-color: <?= $textColor; ?>;
         }
 
     </style>

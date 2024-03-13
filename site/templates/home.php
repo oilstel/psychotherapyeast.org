@@ -143,6 +143,65 @@
     </div>
 </div>
 
+<!-- Window -->
+<div id="room">
+    <div id="window">
+        <audio src="https://arena-attachments.s3.amazonaws.com/26956218/a279d971148ba0f5aaeb466b52109148.mp3?1710335302" loop id="soundtrack"></audio>
+    </div>
+</div>
+
+
+<script>
+document.getElementById('glass-pane').addEventListener('click', function() {
+  var room = document.getElementById('room');
+  var soundtrack = document.getElementById('soundtrack');
+
+  // Make the room renderable but still fully transparent
+  room.style.display = 'flex';
+  // Allow a reflow/repaint cycle before starting the opacity transition
+  setTimeout(() => {
+    room.classList.add('show');
+  }, 10); // This delay could be very short
+
+  // Proceed with the audio fade-in as previously described
+  soundtrack.volume = 0;
+  soundtrack.play();
+  var volume = 0;
+  var fadeAudioIn = setInterval(function() {
+    if (volume < 0.1) {
+      volume += 0.01;
+      soundtrack.volume = volume;
+    } else {
+      clearInterval(fadeAudioIn);
+    }
+  }, 200);
+});
+
+document.getElementById('room').addEventListener('click', function() {
+  var room = this;
+  var soundtrack = document.getElementById('soundtrack');
+
+  // Start the fade-out
+  room.classList.remove('show');
+
+  // Fade the audio out
+  var fadeAudioOut = setInterval(function() {
+    if (soundtrack.volume > 0.1) {
+      soundtrack.volume -= 0.01;
+    } else {
+      soundtrack.pause();
+      soundtrack.volume = 0;
+      clearInterval(fadeAudioOut);
+    }
+  }, 200);
+
+  // Wait for the opacity transition to finish before setting display to none
+  room.addEventListener('transitionend', function handler() {
+    room.style.display = 'none';
+    room.removeEventListener('transitionend', handler); // Clean up the listener
+  });
+});
+</script>
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {

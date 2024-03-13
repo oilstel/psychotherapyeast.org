@@ -286,6 +286,7 @@ nav a:nth-child(3):hover {
     position: relative;
     overflow: hidden;
     display: inline-block;
+    cursor: zoom-in;
 }
 
 .droplet {
@@ -411,6 +412,37 @@ nav a:nth-child(3):hover {
     padding: 10px;
     margin-top: 12px;
     border-radius: 3px;
+}
+
+/* Room */
+#room {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #541313;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    opacity: 0;
+    transition: opacity 2s;
+    cursor: zoom-out;
+}
+#room.show {
+    display: flex;
+    opacity: 1; /* Fully visible */
+}
+#window {
+    width: 90dvw;
+    max-height: 90dvh;
+    aspect-ratio: 3 / 2;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    border: 4px solid #e2e1d9;
 }
 
 

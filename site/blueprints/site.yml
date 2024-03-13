@@ -36,20 +36,6 @@ tabs:
               - ul
               - ol
             
-      headerImageSection:
-        type: fields
-        fields:
-          imageHeadline:
-            label: Main Header Image
-            type: headline
-            text: Header Image Section
-          headerImage:
-            label: Header Image
-            type: files
-            max: 1
-            help: Upload a header image for the page.
-            template: image
-            
       pageSections:
         type: fields
         fields:
@@ -162,7 +148,7 @@ tabs:
             type: email
             width: 1/2
 
-      appearanceSection:
+      annocuementSection:
         type: fields
         fields:
 
@@ -175,6 +161,7 @@ tabs:
             label: Announcement Banner Text
             type: textarea
             help: Enter the text for the announcement banner.
+            width: 1/2
             buttons:
               - bold
               - italic
@@ -187,7 +174,11 @@ tabs:
             label: Display Announcement Banner?
             type: toggle
             help: Toggle on to display the announcement banner on the website.
-
+            width: 1/2
+  
+      appearanceSection:
+        type: fields
+        fields:
           appearanceHeadline:
             label: Appearance Settings
             type: headline
@@ -203,6 +194,26 @@ tabs:
             type: color
             default: "#ffffff"
             help: Choose a custom background color.
+            width: 1/4
+
+      headerImageSection:
+        type: fields
+        fields:
+          imageHeadline:
+            label: Logo & window images
+            type: headline
+            text: Header Image Section
+          headerImage:
+            label: Header Image
+            type: files
+            max: 1
+            help: Upload a header image for the page.
+            template: image
+            width: 1/4
+          windowActive:
+            label: Window active?
+            type: toggle
+            text: 
             width: 1/4
 
   filesTab:
