@@ -62,26 +62,26 @@ tabs:
                   - ul
                   - ol
               subSections:
-                label: Sub-sections
+                label: Subsections
                 type: structure
                 fields:
                   subSectionTitle:
-                    label: Sub-section Title
+                    label: Subsection Title
                     type: text
                   subSectionIcon:
-                    label: Sub-section Icon
+                    label: Subsection Icon
                     type: files
                     max: 1
                     template: image
                     width: 1/2
                   subSectionColor:
-                    label: Sub-section Color
+                    label: Subsection Color
                     type: color
                     default: "#e4e4e4"
-                    help: Choose a sub-section color.
+                    help: Choose a subsection color.
                     width: 1/2
                   subSectionBody:
-                    label: Sub-section Body
+                    label: Subsection Body
                     type: textarea
                     buttons:
                       - bold
