@@ -75,6 +75,36 @@ tabs:
                   - "|"
                   - ul
                   - ol
+              subSections:
+                label: Sub-sections
+                type: structure
+                fields:
+                  subSectionTitle:
+                    label: Sub-section Title
+                    type: text
+                  subSectionIcon:
+                    label: Sub-section Icon
+                    type: files
+                    max: 1
+                    template: image
+                    width: 1/2
+                  subSectionColor:
+                    label: Sub-section Color
+                    type: color
+                    default: "#e4e4e4"
+                    help: Choose a sub-section color.
+                    width: 1/2
+                  subSectionBody:
+                    label: Sub-section Body
+                    type: textarea
+                    buttons:
+                      - bold
+                      - italic
+                      - link
+                      - email
+                      - "|"
+                      - ul
+                      - ol
                 
       teamSection:
         type: fields

@@ -65,10 +65,38 @@
             </div>
         <?php endif; ?>
         <?php foreach ($site->sections()->toStructure() as $section): ?>
-            <details>
+            <details open>
                 <summary><?= $section->sectionTitle()->html() ?></summary>
                 <div class="inner">
                     <?= $section->sectionBody()->kirbytext() ?>
+
+                    <!-- Sub-sections -->
+                    <div class="subsections">
+                        <div class="subsection-buttons">
+                            <?php if($section->subSections()->isNotEmpty()): ?>
+                                <?php foreach ($section->subSections()->toStructure() as $subSection): ?>
+                                    <style>
+                                        button#<?= $subSection->subSectionTitle()->slug() ?>:hover, button#<?= $subSection->subSectionTitle()->slug() ?>.active, .subsection-body#<?= $subSection->subSectionTitle()->slug() ?> {
+                                            background-color: <?= $subSection->subSectionColor()->or('#e4e4e4') ?>;
+                                        }
+                                    </style>
+                                    <button style="color: <?= $subSection->subSectionColor()->or('#e4e4e4') ?>" id="<?= $subSection->subSectionTitle()->slug() ?>">
+                                        <?php if($icon = $subSection->subSectionIcon()->toFiles()->first()): ?>
+                                            <img src="<?= $icon->url() ?>" alt="<?= $subSection->subSectionTitle()->html() ?>">
+                                        <?php endif ?>
+                                        <?= $subSection->subSectionTitle()->html() ?>
+                                    </button>
+                                <?php endforeach ?>
+                            <?php endif ?>
+                        </div>
+                        <?php if($section->subSections()->isNotEmpty()): ?>
+                            <?php foreach ($section->subSections()->toStructure() as $subSection): ?>
+                                <div class="subsection-body" id="<?= $subSection->subSectionTitle()->slug() ?>" style="display: none;">
+                                    <?= $subSection->subSectionBody()->kirbytext() ?>
+                                </div>
+                            <?php endforeach ?>
+                        <?php endif ?>
+                    </div>
                 </div>
             </details>
         <?php endforeach ?>
@@ -116,6 +144,50 @@
         <?php endforeach ?>
     </div>
 </div>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    // Select all buttons within the .subsections container
+    const buttons = document.querySelectorAll('.subsections button');
+
+    function toggleSection() {
+        // Get the id of the clicked button
+        const sectionId = this.id;
+
+        // Select all section bodies
+        const allBodies = document.querySelectorAll('.subsection-body');
+        let isSectionOpen = false;
+
+        // Loop through all section bodies
+        allBodies.forEach(body => {
+            if (body.id === sectionId) {
+                // Toggle the display of the current body and check if it's open
+                body.style.display = body.style.display === 'block' ? 'none' : 'block';
+                isSectionOpen = body.style.display === 'block';
+            } else {
+                body.style.display = 'none';
+            }
+        });
+
+        // Remove active class from all buttons and add to the clicked one if the section is open
+        buttons.forEach(button => {
+            button.classList.remove('active');
+        });
+
+        if (isSectionOpen) {
+            this.classList.add('active');
+        }
+    }
+
+    // Add click event listener to each button
+    buttons.forEach(button => {
+        button.addEventListener('click', toggleSection);
+    });
+});
+
+</script>
+
 
 
 

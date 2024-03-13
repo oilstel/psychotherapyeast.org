@@ -376,6 +376,39 @@ nav a:nth-child(3):hover {
 }
 
 
+/* Subsections */
+.subsections {
+    margin-top: 20px;
+}
+.subsections .subsection-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+.subsections .subsection-buttons button {
+    color: #541313;
+    border: 1px solid #6e6e6e;
+    border-radius: 3px;
+    background-color: transparent;
+    padding: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: #00000006;
+}
+.subsections .subsection-buttons button:hover, .subsections .subsection-buttons button.active {
+    border-color: #000;
+}
+.subsections .subsection-buttons button img {
+    width: 20px;
+    cursor: pointer;
+}
+.subsections .subsection-body {
+    padding: 10px;
+    margin-top: 12px;
+    border-radius: 3px;
+}
+
+
 @media(max-width: 1000px) {
     header, #contact, #team {
         position: relative;
