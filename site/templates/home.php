@@ -71,9 +71,9 @@
                     <?= $section->sectionBody()->kirbytext() ?>
 
                     <!-- Sub-sections -->
-                    <div class="subsections">
-                        <div class="subsection-buttons">
-                            <?php if($section->subSections()->isNotEmpty()): ?>
+                    <?php if($section->subSections()->isNotEmpty()): ?>
+                        <div class="subsections">
+                            <div class="subsection-buttons">
                                 <?php foreach ($section->subSections()->toStructure() as $subSection): ?>
                                     <style>
                                         button#<?= $subSection->subSectionTitle()->slug() ?>:hover, button#<?= $subSection->subSectionTitle()->slug() ?>.active, .subsection-body#<?= $subSection->subSectionTitle()->slug() ?> {
@@ -87,16 +87,14 @@
                                         <?= $subSection->subSectionTitle()->html() ?>
                                     </button>
                                 <?php endforeach ?>
-                            <?php endif ?>
-                        </div>
-                        <?php if($section->subSections()->isNotEmpty()): ?>
+                            </div>
                             <?php foreach ($section->subSections()->toStructure() as $subSection): ?>
                                 <div class="subsection-body" id="<?= $subSection->subSectionTitle()->slug() ?>" style="display: none;">
                                     <?= $subSection->subSectionBody()->kirbytext() ?>
                                 </div>
                             <?php endforeach ?>
-                        <?php endif ?>
-                    </div>
+                        </div>
+                    <?php endif ?>
                 </div>
             </details>
         <?php endforeach ?>
