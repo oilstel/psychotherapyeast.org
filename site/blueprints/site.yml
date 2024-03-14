@@ -175,6 +175,33 @@ tabs:
             type: toggle
             help: Toggle on to display the announcement banner on the website.
             width: 1/2
+
+      headerImageSection:
+        type: fields
+        fields:
+          imageHeadline:
+            label: Logo
+            type: headline
+            text: Header Image Section
+          headerImage:
+            label: Header Image
+            type: files
+            max: 1
+            help: Upload a header image for the page.
+            template: image
+            width: 1/2
+          backgroundMusic:
+            label: Background Music
+            type: files
+            max: 1
+            help: Upload a background music file in MP3 format.
+            accept: audio/mp3
+            width: 1/2
+          # windowActive:
+          #   label: Window active?
+          #   type: toggle
+          #   text: 
+          #   width: 1/4
   
       appearanceSection:
         type: fields
@@ -194,26 +221,6 @@ tabs:
             type: color
             default: "#ffffff"
             help: Choose a custom background color.
-            width: 1/4
-
-      headerImageSection:
-        type: fields
-        fields:
-          imageHeadline:
-            label: Logo & window images
-            type: headline
-            text: Header Image Section
-          headerImage:
-            label: Header Image
-            type: files
-            max: 1
-            help: Upload a header image for the page.
-            template: image
-            width: 1/4
-          windowActive:
-            label: Window active?
-            type: toggle
-            text: 
             width: 1/4
 
   filesTab:

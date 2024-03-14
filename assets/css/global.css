@@ -334,7 +334,6 @@ nav a:nth-child(3):hover {
     position: relative;
     overflow: hidden;
     display: inline-block;
-    cursor: zoom-in;
 }
 
 .droplet {
@@ -477,7 +476,6 @@ nav a:nth-child(3):hover {
     display: none;
     opacity: 0;
     transition: opacity 2s;
-    cursor: zoom-out;
 }
 #room.show {
     display: flex;

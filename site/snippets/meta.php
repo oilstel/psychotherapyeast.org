@@ -49,8 +49,21 @@
             background-image: url('<?= $windowImage; ?>');
             border-color: <?= $textColor; ?>;
         }
-
+        <?php if ($site->headerImage()->isNotEmpty()): ?>
+            #glass-pane {
+                cursor: zoom-in;
+            }
+            #room {
+                cursor: zoom-out;
+            }
+        <?php endif; ?>
     </style>
+    <script>
+        let easterEgg = true;
+        <?php if ($site->headerImage()->isEmpty()): ?>
+            easterEgg = false;
+        <?php endif; ?>
+    </script>
 </head>
 
 <body id="<?= $page->parent() ? $page->parent()->slug() : $page->slug() ?>">

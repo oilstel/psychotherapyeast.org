@@ -1,53 +1,56 @@
 
-document.getElementById('glass-pane').addEventListener('click', function() {
-  var room = document.getElementById('room');
-  var soundtrack = document.getElementById('soundtrack');
+if (easterEgg === true) {
+    console.log(easterEgg);
+    document.getElementById('glass-pane').addEventListener('click', function() {
+    var room = document.getElementById('room');
+    var soundtrack = document.getElementById('soundtrack');
 
-  // Make the room renderable but still fully transparent
-  room.style.display = 'flex';
-  // Allow a reflow/repaint cycle before starting the opacity transition
-  setTimeout(() => {
-    room.classList.add('show');
-  }, 10); // This delay could be very short
+    // Make the room renderable but still fully transparent
+    room.style.display = 'flex';
+    // Allow a reflow/repaint cycle before starting the opacity transition
+    setTimeout(() => {
+        room.classList.add('show');
+    }, 10); // This delay could be very short
 
-  // Proceed with the audio fade-in as previously described
-  soundtrack.volume = 0;
-  soundtrack.play();
-  var volume = 0;
-  var fadeAudioIn = setInterval(function() {
-    if (volume < 0.1) {
-      volume += 0.01;
-      soundtrack.volume = volume;
-    } else {
-      clearInterval(fadeAudioIn);
-    }
-  }, 200);
-});
+    // Proceed with the audio fade-in as previously described
+    soundtrack.volume = 0;
+    soundtrack.play();
+    var volume = 0;
+    var fadeAudioIn = setInterval(function() {
+        if (volume < 0.1) {
+        volume += 0.01;
+        soundtrack.volume = volume;
+        } else {
+        clearInterval(fadeAudioIn);
+        }
+    }, 200);
+    });
 
-document.getElementById('room').addEventListener('click', function() {
-  var room = this;
-  var soundtrack = document.getElementById('soundtrack');
+    document.getElementById('room').addEventListener('click', function() {
+    var room = this;
+    var soundtrack = document.getElementById('soundtrack');
 
-  // Start the fade-out
-  room.classList.remove('show');
+    // Start the fade-out
+    room.classList.remove('show');
 
-  // Fade the audio out
-  var fadeAudioOut = setInterval(function() {
-    if (soundtrack.volume > 0.1) {
-      soundtrack.volume -= 0.01;
-    } else {
-      soundtrack.pause();
-      soundtrack.volume = 0;
-      clearInterval(fadeAudioOut);
-    }
-  }, 200);
+    // Fade the audio out
+    var fadeAudioOut = setInterval(function() {
+        if (soundtrack.volume > 0.1) {
+        soundtrack.volume -= 0.01;
+        } else {
+        soundtrack.pause();
+        soundtrack.volume = 0;
+        clearInterval(fadeAudioOut);
+        }
+    }, 200);
 
-  // Wait for the opacity transition to finish before setting display to none
-  room.addEventListener('transitionend', function handler() {
-    room.style.display = 'none';
-    room.removeEventListener('transitionend', handler); // Clean up the listener
-  });
-});
+    // Wait for the opacity transition to finish before setting display to none
+    room.addEventListener('transitionend', function handler() {
+        room.style.display = 'none';
+        room.removeEventListener('transitionend', handler); // Clean up the listener
+    });
+    });
+}
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -88,11 +91,6 @@ document.addEventListener('DOMContentLoaded', function () {
         button.addEventListener('click', toggleSection);
     });
 });
-
-
-
-
-
 
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -161,22 +159,22 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-    var glassPane = document.getElementById('glass-pane');
+var glassPane = document.getElementById('glass-pane');
 
-    // Create droplets
-    for(var i = 0; i < 10; i++) {
-        var droplet = document.createElement('div');
-        droplet.className = 'droplet';
-        droplet.style.left = Math.random() * 200 + 'px';  // Random horizontal position
-        droplet.style.top = Math.random() * 200 + 'px';   // Random vertical position
-        droplet.style.height = (Math.random() * 10 + 10) + 'px';  // Random height between 10px and 30px
+// Create droplets
+for(var i = 0; i < 10; i++) {
+    var droplet = document.createElement('div');
+    droplet.className = 'droplet';
+    droplet.style.left = Math.random() * 200 + 'px';  // Random horizontal position
+    droplet.style.top = Math.random() * 200 + 'px';   // Random vertical position
+    droplet.style.height = (Math.random() * 10 + 10) + 'px';  // Random height between 10px and 30px
 
-        // Randomly apply blur filter to approximately half of the droplets
-        // if (Math.random() < 0.5) {
-        //     droplet.style.backgroundColor = '#f0f0f0';
-        //     droplet.style.border = 'none';
-        //     // droplet.style.filter = 'blur(10px)';
-        // }
+    // Randomly apply blur filter to approximately half of the droplets
+    // if (Math.random() < 0.5) {
+    //     droplet.style.backgroundColor = '#f0f0f0';
+    //     droplet.style.border = 'none';
+    //     // droplet.style.filter = 'blur(10px)';
+    // }
 
-        glassPane.appendChild(droplet);
-    }
+    glassPane.appendChild(droplet);
+}
