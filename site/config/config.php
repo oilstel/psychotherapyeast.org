@@ -1,10 +1,10 @@
 <?php
 
-// return [
-//   'debug' => true,
-//   'panel' => [
-//     'install' => true
-// ]
+return [
+  'debug' => false,
+  'panel' => [
+    'install' => false
+]
 
   //   Routes
 //   'routes' => [
