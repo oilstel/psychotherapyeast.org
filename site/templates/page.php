@@ -28,11 +28,14 @@
             <?= $page->pageContent()->kt() ?>
         </div>
 
-        <div id="subpages">
-            <?php foreach ($page->children()->listed() as $subpage): ?>
-                <a href="<?= $subpage->url() ?>"><?= $subpage->title()->html() ?></a>
-            <?php endforeach ?>
-        </div>
+        <?php foreach ($page->sections()->toStructure() as $section): ?>
+            <details>
+                <summary><?= $section->sectionTitle()->html() ?></summary>
+                <div class="inner">
+                    <?= $section->sectionBody()->kirbytext() ?>
+                </div>
+            </details>
+        <?php endforeach ?>
 
     </aside>
 

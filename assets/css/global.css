@@ -201,14 +201,14 @@ nav#breadcrumb a:hover {
     border-bottom: 5px solid transparent; /* Size of the arrow */
     border-left: 5px solid black; /* Color and sharpness of the arrow */
 }
-#page-content figure {
+#page-content figure, details .inner figure {
     margin: 20px 0;
 }
-#page-content figure img, #page-content iframe {
+#page-content figure img, #page-content iframe, details .inner figure img, details .inner iframe {
     width: 100%;
     max-width: initial;
 }
-#page-content figure figcaption {
+#page-content figure figcaption, details .inner figcaption {
     color: #541313;
     font-size: 14px;
     line-height: 19px;
