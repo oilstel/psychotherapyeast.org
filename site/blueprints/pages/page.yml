@@ -52,11 +52,11 @@ columns:
   sidebar:
     width: 1/3
     sections:
-      subpagesSection:
-        type: pages
-        headline: Subpages
-        template: page
-        status: all
+      # subpagesSection:
+      #   type: pages
+      #   headline: Subpages
+      #   template: page
+      #   status: all
       filesSection:
         type: files
         headline: All Files
