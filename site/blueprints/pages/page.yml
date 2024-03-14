@@ -1,0 +1,27 @@
+title: Page
+
+columns:
+  # Main content area
+  main:
+    width: 2/3
+    sections:
+      fieldsSection:
+        type: fields
+        fields:
+          pageContent:
+            label: Page Content
+            type: textarea
+
+  # Sidebar with subpages and files
+  sidebar:
+    width: 1/3
+    sections:
+      subpagesSection:
+        type: pages
+        headline: Subpages
+        template: page
+        status: all
+      filesSection:
+        type: files
+        headline: All Files
+        template: file

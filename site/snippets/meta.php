@@ -33,7 +33,7 @@
             }
         ?>
 
-        h1, h2, h3, p, button, #team a, li, summary, a {
+        h1, h2, h3, p, button, #team a, li, summary, a, figcaption {
             color: <?= $textColor; ?> !important;
         }
         #glass-pane, #glass-pane .droplet {

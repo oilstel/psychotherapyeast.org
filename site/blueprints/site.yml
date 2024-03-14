@@ -234,3 +234,13 @@ tabs:
         image:
           back: "black"
           cover: true
+
+  pagesTab:
+    label: Pages
+    sections:
+      pagesTab:
+        type: pages
+        headline: Pages
+        status: all
+        template: page
+ 

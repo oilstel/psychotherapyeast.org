@@ -164,7 +164,59 @@ h3 {
 img {
     max-width: 200px;
 }
-nav {
+
+nav#breadcrumb {
+    margin-bottom: 20px;
+}
+nav#breadcrumb a {
+    text-decoration: none;
+}
+nav#breadcrumb a:hover {
+    text-decoration: underline;
+}
+#subpages {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 10px;
+}
+#subpages a {
+    border: 1px solid #000;
+    border-radius: 3px;
+    background-color: #ffffff82;
+    padding: 8px;
+    font-weight: 700;
+    text-decoration: none;
+}
+#subpages a:hover {
+    background-color: #eeeeee;
+}
+#subpages a::after {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 5px; /* Space between the text and the arrow */
+    vertical-align: middle;
+    border-top: 5px solid transparent; /* Size of the arrow */
+    border-bottom: 5px solid transparent; /* Size of the arrow */
+    border-left: 5px solid black; /* Color and sharpness of the arrow */
+}
+#page-content figure {
+    margin: 20px 0;
+}
+#page-content figure img, #page-content iframe {
+    width: 100%;
+    max-width: initial;
+}
+#page-content figure figcaption {
+    color: #541313;
+    font-size: 14px;
+    line-height: 19px;
+}
+  
+
+
+/* nav {
     border: 1px solid #000;
     padding: 20px;
 }
@@ -215,20 +267,16 @@ nav a::before {
     background-size: contain;
     background-repeat: no-repeat;
     border-radius: 2px;
-    /* filter: blur(4px); */
     margin:  30px auto;
 }
 nav a:nth-child(1)::before {
     background-image: url('../images/sun.png');
-    /* background-color: rgb(68, 13, 130); */
 }
 nav a:nth-child(2)::before {
     background-image: url('../images/leaf.png');
-    /* background-color: rgb(189, 53, 4); */
 }
 nav a:nth-child(3)::before {
     background-image: url('../images/ant.png');
-    /* background-color: rgb(171, 191, 42); */
 }
 nav a:nth-child(1):hover {
     background-color: rgba(68, 13, 130, 0.178);
@@ -238,7 +286,7 @@ nav a:nth-child(2):hover {
 }
 nav a:nth-child(3):hover {
     background-color: rgba(171, 191, 42, 0.392);
-}
+} */
 
 /* Team List */
 #team ul {
