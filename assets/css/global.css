@@ -204,6 +204,12 @@ nav#breadcrumb a:hover {
 #page-content figure, details .inner figure {
     margin: 20px 0;
 }
+#page-content figure:first-child, details .inner figure:first-child {
+    margin-top: 0;
+}
+#page-content figure:last-child, details .inner figure:last-child {
+    margin-bottom: 0;
+}
 #page-content figure img, #page-content iframe, details .inner figure img, details .inner iframe {
     width: 100%;
     max-width: initial;
