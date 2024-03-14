@@ -540,4 +540,8 @@ nav a:nth-child(3):hover {
     .subsections .subsection-buttons button {
         flex-flow: column nowrap;
     }
+    nav#breadcrumb {
+        border-top: 1px solid #00000021;
+        padding-top: 10px;
+    }
 }
