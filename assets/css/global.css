@@ -218,6 +218,11 @@ nav#breadcrumb a:hover {
     color: #541313;
     font-size: 14px;
     line-height: 19px;
+    display: none;
+}
+
+details .inner figure:hover figcaption {
+    display: block;
 }
   
 

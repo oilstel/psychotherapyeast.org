@@ -61,6 +61,13 @@ tabs:
                   - "|"
                   - ul
                   - ol
+              isOpen:
+                label: Open by default?
+                type: toggle
+                default: false
+                text:
+                  - 'Closed'
+                  - 'Open'
               subSections:
                 label: Subsections
                 type: structure

@@ -18,7 +18,7 @@
             </div>
         <?php endif; ?>
         <?php foreach ($site->sections()->toStructure() as $section): ?>
-            <details>
+            <details <?= $section->isOpen()->toBool() ? 'open' : '' ?>>
                 <summary><?= $section->sectionTitle()->html() ?></summary>
                 <div class="inner">
                     <?= $section->sectionBody()->kirbytext() ?>

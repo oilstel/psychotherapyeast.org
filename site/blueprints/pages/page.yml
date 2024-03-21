@@ -47,6 +47,13 @@ columns:
                   - "|"
                   - ul
                   - ol
+              isOpen:
+                label: Open by default?
+                type: toggle
+                default: false
+                text:
+                  - 'Closed'
+                  - 'Open'
 
   # Sidebar with subpages and files
   sidebar:
