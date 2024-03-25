@@ -24,6 +24,7 @@ columns:
               - "|"
               - ul
               - ol
+              - file
           sectionsHeadline:
             label: Sections
             type: headline
@@ -44,9 +45,9 @@ columns:
                   - link
                   - email
                   - file
-                  - "|"
                   - ul
                   - ol
+                  - file
               isOpen:
                 label: Open by default?
                 type: toggle

@@ -20,7 +20,6 @@ tabs:
               - italic
               - link
               - email
-              - "|"
               - ul
               - ol
           quickInfo:
@@ -32,7 +31,6 @@ tabs:
               - italic
               - link
               - email
-              - "|"
               - ul
               - ol
             
@@ -58,9 +56,9 @@ tabs:
                   - italic
                   - link
                   - email
-                  - "|"
                   - ul
                   - ol
+                  - file
               isOpen:
                 label: Open by default?
                 type: toggle
@@ -95,9 +93,9 @@ tabs:
                       - italic
                       - link
                       - email
-                      - "|"
                       - ul
                       - ol
+                      - file
                 
       teamSection:
         type: fields
@@ -121,10 +119,8 @@ tabs:
                   - bold
                   - italic
                   - link
-                  - email
                   - ul
                   - ol
-                  - file
               teamMemberImage:
                 label: Team Member Image
                 type: files
