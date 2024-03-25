@@ -410,6 +410,12 @@ nav a:nth-child(3):hover {
     width: 100%;
     max-width: 200px;
 }
+#members #inner .content img.bio-image {
+    max-width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 1px solid #541313;
+}
 #members #inner .content .professional-logos {
     display: flex;
     flex-flow: row wrap;

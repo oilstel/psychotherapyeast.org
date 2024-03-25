@@ -9,7 +9,7 @@
                 <div class="content">
                     <h2><?= $member->name()->html() ?></h2>
                     <?php if ($image = $member->teamMemberImage()->toFile()): ?>
-                        <img src="<?= $image->url() ?>" alt="Team Member Image">
+                        <img src="<?= $image->url() ?>" class="bio-image" alt="Team Member Image">
                     <?php endif ?>
                     <div class="bio">
                         <?= $member->about()->kt() ?>
