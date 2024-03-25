@@ -397,9 +397,14 @@ nav a:nth-child(3):hover {
     max-height: calc(100dvh - 142px);
     padding: 10px;
 }
-#members #inner .member h3 {
-    margin-bottom: 18px;
+#members #inner h2 {
+    font-size: 24px;
     margin-top: 0;
+    margin-bottom: 20px;
+}
+#members #inner .member h3 {
+    margin-bottom: 0;
+    margin-top: 20px;
 }
 #members #inner .content img {
     width: 100%;

@@ -7,7 +7,7 @@
                     <button class="close" data-member="<?= $member->name()->slug() ?>">close <?= $member->name()->lower() ?>'s bio</button>
                 </div>
                 <div class="content">
-                    <h3><?= $member->name()->html() ?></h3>
+                    <h2><?= $member->name()->html() ?></h2>
                     <?php if ($image = $member->teamMemberImage()->toFile()): ?>
                         <img src="<?= $image->url() ?>" alt="Team Member Image">
                     <?php endif ?>
@@ -16,7 +16,6 @@
                     </div>
                     <!-- Professional Logos -->
                     <?php
-                    // Assuming 'professionalLogos' is a field that returns a collection of file objects
                     $logos = $member->professionalLogos()->toFiles();
                     if($logos->isNotEmpty()): ?>
                         <div class="professional-logos">

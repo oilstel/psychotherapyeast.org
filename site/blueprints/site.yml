@@ -117,13 +117,14 @@ tabs:
                 label: About
                 type: textarea
                 buttons:
+                  - headlines
                   - bold
                   - italic
                   - link
                   - email
-                  - "|"
                   - ul
                   - ol
+                  - file
               teamMemberImage:
                 label: Team Member Image
                 type: files
