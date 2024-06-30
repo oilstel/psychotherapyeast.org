@@ -178,3 +178,72 @@ for(var i = 0; i < 10; i++) {
 
     glassPane.appendChild(droplet);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+// function convertDivToSVG(divId) {
+//     const divElement = document.getElementById(divId);
+//     if (!divElement) {
+//       console.error('DIV element not found!');
+//       return;
+//     }
+  
+//     const { width, height } = divElement.getBoundingClientRect();
+//     const borderWidth = parseFloat(getComputedStyle(divElement).borderWidth);
+  
+//     const svgNS = "http://www.w3.org/2000/svg";
+//     const svg = document.createElementNS(svgNS, "svg");
+//     svg.setAttribute("width", width);
+//     svg.setAttribute("height", height);
+//     svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
+  
+//     const rect = document.createElementNS(svgNS, "rect");
+//     rect.setAttribute("x", borderWidth / 2);
+//     rect.setAttribute("y", borderWidth / 2);
+//     rect.setAttribute("width", width - borderWidth);
+//     rect.setAttribute("height", height - borderWidth);
+//     rect.setAttribute("fill", "transparent");
+//     rect.setAttribute("stroke", "#541313");
+//     rect.setAttribute("stroke-width", borderWidth);
+//     svg.appendChild(rect);
+  
+//     divElement.querySelectorAll('.droplet').forEach(droplet => {
+//       const left = parseFloat(droplet.style.left);
+//       const top = parseFloat(droplet.style.top);
+//       const dropletSize = parseFloat(droplet.style.height);
+//       const borderWidth = parseFloat(getComputedStyle(droplet).borderWidth);
+  
+//       const circle = document.createElementNS(svgNS, "circle");
+//       circle.setAttribute("cx", left + dropletSize / 2);
+//       circle.setAttribute("cy", top + dropletSize / 2);
+//       circle.setAttribute("r", dropletSize / 2 - borderWidth / 2);
+//       circle.setAttribute("fill", "transparent");
+//       circle.setAttribute("stroke", "#541313");
+//       circle.setAttribute("stroke-width", borderWidth);
+//       svg.appendChild(circle);
+//     });
+  
+//     const serializer = new XMLSerializer();
+//     const svgString = serializer.serializeToString(svg);
+//     const blob = new Blob([svgString], { type: 'image/svg+xml;charset=utf-8' });
+//     const url = URL.createObjectURL(blob);
+//     const downloadLink = document.createElement('a');
+//     downloadLink.href = url;
+//     downloadLink.download = `${divId}.svg`;
+//     document.body.appendChild(downloadLink);
+//     downloadLink.click();
+//     document.body.removeChild(downloadLink);
+//     URL.revokeObjectURL(url);
+//   }
+  
+//   convertDivToSVG('glass-pane');
+  
